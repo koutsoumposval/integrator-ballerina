@@ -37,7 +37,7 @@ service publisher on new http:Listener(9090) {
 
         var result = caller->respond(res);
 
-        log:printInfo("GET Product byId Response: " + responsePayload.toJsonString());
+        log:printInfo("Get Product byId Response: " + responsePayload.toJsonString());
     }
 
     @http:ResourceConfig {
@@ -108,7 +108,7 @@ service publisher on new http:Listener(9090) {
 
         var result = caller->respond(res);
 
-        log:printInfo("GET Product List Response: " + responsePayload.toJsonString());
+        log:printInfo("Get Product List Response: " + responsePayload.toJsonString());
     }
 }
 
