@@ -2,3 +2,43 @@ org_name = "integrator"
 version = "0.1.0"
 lockfile_version = "1.0.0"
 ballerina_version = "1.1.3"
+
+[[imports."integrator/interfaces:0.1.0"]]
+org_name = "integrator"
+name = "common"
+version = "0.1.0"
+
+[[imports."integrator/interfaces:0.1.0"]]
+org_name = "integrator"
+name = "messages"
+version = "0.1.0"
+
+[[imports."integrator/interfaces:0.1.0"]]
+org_name = "integrator"
+name = "schemas"
+version = "0.1.0"
+
+[[imports."integrator/interfaces:0.1.0"]]
+org_name = "integrator"
+name = "services"
+version = "0.1.0"
+
+[[imports."integrator/messages:0.1.0"]]
+org_name = "integrator"
+name = "schemas"
+version = "0.1.0"
+
+[[imports."integrator/services:0.1.0"]]
+org_name = "integrator"
+name = "common"
+version = "0.1.0"
+
+[[imports."integrator/services:0.1.0"]]
+org_name = "integrator"
+name = "messages"
+version = "0.1.0"
+
+[[imports."integrator/services:0.1.0"]]
+org_name = "integrator"
+name = "schemas"
+version = "0.1.0"

@@ -74,7 +74,19 @@ curl --location --request POST 'http://localhost:9090/product' -d '{"name":"Yell
 }
 ```
 
-### Run
+### Run & build project
+This project requires ballerina lang installed on your machine.
+
+Ballerina is "batteries included" as stated and comes up with a lot of handy features.
+#### Run
 ```
 ballerina run interfaces
+```
+#### Build / Dockerize
+```
+# build docker image
+ballerina build interfaces
+# run docker image
+# requires explicit network configuration in order to reach backend services
+docker run -d -p 9090:9090 product:v1.0 
 ```

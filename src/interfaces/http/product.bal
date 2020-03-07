@@ -4,11 +4,18 @@ import schemas;
 import services;
 import ballerina/http;
 import ballerina/log;
+import ballerina/docker;
 
+@docker:Expose {}
+listener http:Listener productEP = new(9090);
+@docker:Config {
+    name: "product",
+    tag: "v1.0"
+}
 @http:ServiceConfig {
     basePath: "/product"
 }
-service publisher on new http:Listener(9090) {
+service publisher on productEP {
 
     @http:ResourceConfig {
         methods: ["GET"],
