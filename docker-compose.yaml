@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  integrator:
+    image: ballerina/ballerina:1.1.3
+    networks:
+      - external_network
+    ports:
+      - "9090:9090"
+    volumes:
+      - .:/home/ballerina
+    command: "ballerina run interfaces"
+
+networks:
+  external_network:
+    external:
+      name: external_network
