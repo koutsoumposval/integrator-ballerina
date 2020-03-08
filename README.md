@@ -73,20 +73,16 @@ curl --location --request POST 'http://localhost:9090/product' -d '{"name":"Yell
  "categoryId":1
 }
 ```
+### Configuration
+There is a `ballerina.conf.dist` available.
+Create a new `ballerina.conf` with your configuration preferences.
 
-### Run & build project
-This project requires ballerina lang installed on your machine.
+### Start
+```
+make start
+```
 
-Ballerina is "batteries included" as stated and comes up with a lot of handy features.
-#### Run
+### Stop
 ```
-ballerina run interfaces
-```
-#### Build / Dockerize
-```
-# build docker image
-ballerina build interfaces
-# run docker image
-# requires explicit network configuration in order to reach backend services
-docker run -d -p 9090:9090 product:v1.0 
+make stop
 ```
