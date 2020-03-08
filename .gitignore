@@ -1,3 +1,4 @@
 target
 .idea
 ballerina-internal.log
+ballerina.conf

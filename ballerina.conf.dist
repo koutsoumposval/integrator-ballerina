@@ -1,0 +1,7 @@
+[interface.product]
+basePath="/product"
+
+[service.product]
+host="http://product"
+port=8080
+basePath="/product"

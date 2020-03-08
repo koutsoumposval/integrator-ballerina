@@ -3,8 +3,13 @@ import messages;
 import schemas;
 import ballerina/http;
 import ballerina/log;
+import ballerina/config;
 
-http:Client clientEndpoint = new ("http://localhost:8081/product", {
+http:Client clientEndpoint = new (
+    config:getAsString("service.product.host") + ":" +
+    config:getAsString("service.product.port") +
+    config:getAsString("service.product.basePath"),
+    {
     retryConfig: {
         intervalInMillis: 3000,
         count: 3,

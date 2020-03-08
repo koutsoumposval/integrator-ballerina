@@ -5,6 +5,7 @@ import services;
 import ballerina/http;
 import ballerina/log;
 import ballerina/docker;
+import ballerina/config;
 
 @docker:Expose {}
 listener http:Listener productEP = new(9090);
@@ -13,7 +14,7 @@ listener http:Listener productEP = new(9090);
     tag: "v1.0"
 }
 @http:ServiceConfig {
-    basePath: "/product"
+    basePath: config:getAsString("interface.product.basePath")
 }
 service publisher on productEP {
 
