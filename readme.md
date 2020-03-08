@@ -12,8 +12,7 @@ The application is the Integrator and it is written in Ballerina lang.
 
 Base path of integrator is: `http://localhost:9090`
 
-### Products
-Base path for products service is: `http://localhost:8081/product`
+### Product Endpoints
 API Endpoints available are:
 ```
 GET  "/product"

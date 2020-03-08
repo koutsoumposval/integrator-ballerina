@@ -1,7 +1,7 @@
-[interface.product]
+[interfaces.http.product]
 basePath="/product"
 
-[service.product]
+[services.product]
 host="http://product"
 port=8080
 basePath="/product"

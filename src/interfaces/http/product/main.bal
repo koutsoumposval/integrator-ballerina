@@ -1,7 +1,7 @@
 import common;
 import messages;
 import schemas;
-import services;
+import product_service;
 import ballerina/http;
 import ballerina/log;
 import ballerina/docker;
@@ -14,9 +14,9 @@ listener http:Listener productEP = new(9090);
     tag: "v1.0"
 }
 @http:ServiceConfig {
-    basePath: config:getAsString("interface.product.basePath")
+    basePath: config:getAsString("interfaces.http.product.basePath")
 }
-service publisher on productEP {
+service product on productEP {
 
     @http:ResourceConfig {
         methods: ["GET"],
@@ -26,7 +26,7 @@ service publisher on productEP {
         http:Response res = new;
         json responsePayload = {};
 
-        messages:Product | error msg = services:getProductById(common:validateId(id));
+        messages:Product | error msg = product_service:getProductById(common:validateId(id));
 
         if (msg is messages:Product)
         {
@@ -59,12 +59,12 @@ service publisher on productEP {
 
         if (requestPayload is json) {
 
-            services:addProduct(
+            product_service:addProduct(
             common:validateId(<int>requestPayload.categoryId),
             common:validateString(<string>requestPayload.name)
             );
 
-            messages:ProductList | error msg = services:getProductList();
+            messages:ProductList | error msg = product_service:getProductList();
 
             if (msg is messages:ProductList)
             {
@@ -98,7 +98,7 @@ service publisher on productEP {
         http:Response res = new;
         json responsePayload = {};
 
-        messages:ProductList | error msg = services:getProductList();
+        messages:ProductList | error msg = product_service:getProductList();
 
         if (msg is messages:ProductList)
         {
